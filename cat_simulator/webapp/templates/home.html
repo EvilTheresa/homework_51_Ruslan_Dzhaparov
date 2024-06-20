@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кот</title>
+</head>
+<body>
+    <h1>Вас приветствует симулятор кота</h1>
+    <p>Для начала введите имя кота:</p>
+    <form action="{% url 'create_cat' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="введите имя кота" required>
+        <button type="submit">создать</button>
+    </form>
+</body>
+</html>

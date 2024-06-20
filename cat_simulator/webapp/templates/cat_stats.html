@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Кот - {{ cat.name }}</h1>
+    <p>Возраст - {{ cat.age }} год</p>
+    <p>Уровень счастья - {{ cat.happiness }}</p>
+    <p>Уровень сытости - {{ cat.satiety }}</p>
+    <img src="{% static cat.avatar %}" alt="Avatar">
+
+    <form action="{% url 'cat_stats' %}" method="post">
+        {% csrf_token %}
+        <label for="action">Выберите действие</label>
+        <select name="action" id="action">
+            <option value="play">поиграть с котом</option>
+            <option value="feed">покормить кота</option>
+            <option value="sleep">уложить спать кота</option>
+        </select>
+        <button type="submit">подтвердить</button>
+    </form>
+</body>
+</html>
