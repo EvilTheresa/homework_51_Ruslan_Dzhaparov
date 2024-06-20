@@ -5,7 +5,7 @@ class Cat:
     def __init__(self, name):
         self.name = name
         self.age = 1
-        self.satiety = 40
+        self.satiety = 50
         self.happiness = 40
         self.asleep = False
         self.update_avatar()
